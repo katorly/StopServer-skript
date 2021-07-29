@@ -1,0 +1,91 @@
+options:
+    prefix: &b&lStopServer &r&8>> &7
+    nopermission: &b&lStopServer &r&8>> &7You don't have permission to do that!
+
+on skript load:
+    set {StopServer.started} to false
+    set {StopServer.remain} to -1
+    if {StopServer.countdown} is not set:
+        set {StopServer.countdown} to 60
+        send "{@prefix}Server-stopping countdown is not set! Countdown now set to default value: 60 seconds." to console
+    send "{@prefix}StopServer(by Katorly) enabled!" to console
+
+on skript stop:
+    delete {StopServer.started}
+    delete {StopServer.remain}
+    send "{@prefix}StopServer disabled!" to console
+
+command /stopserver [<text>] [<number>]:
+    aliases: /sstop
+    permission: stopserver.stop
+    permission message: {@nopermission}
+    trigger:
+        if arg-1 is not set:
+            if {StopServer.started} is true:
+                message "{@prefix}stopping server immediately..."
+                send title "&b&lStopServer" with subtitle "&r&7Server stops right now!" to all players for 3 seconds
+                restart server
+            else:
+                message "{@prefix}Server-stopping countdown started!"
+                message "{@prefix}If you want to stop the server immediately, use &f/sstop&7 again."
+                message "{@prefix}If you want to cancel server-stopping, use &f/sstop cancel&7."
+                set {StopServer.remain} to {StopServer.countdown}
+                set {StopServer.started} to true
+                send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.countdown}% seconds!" to all players for 3 seconds
+                loop {StopServer.countdown} times:
+                    if {StopServer.started} is true:
+                        wait a second
+                        set {StopServer.remain} to {StopServer.remain} - 1
+                        if {StopServer.remain} is 60:
+                            send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.remain}% seconds!" to all players for 3 seconds
+                        if {StopServer.remain} is 30:
+                            send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.remain}% seconds!" to all players for 3 seconds
+                        if {StopServer.remain} is 10:
+                            send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.remain}% seconds!" to all players for 3 seconds
+                        if {StopServer.remain} is 5:
+                            send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.remain}% seconds!" to all players for 3 seconds
+                        if {StopServer.remain} is 3:
+                            send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.remain}% seconds!" to all players for 3 seconds
+                        if {StopServer.remain} is 2:
+                            send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.remain}% seconds!" to all players for 3 seconds
+                        if {StopServer.remain} is 1:
+                            send title "&b&lStopServer" with subtitle "&r&7Server will stop in %{StopServer.remain}% seconds!" to all players for 3 seconds
+                        if {StopServer.remain} is 0:
+                            restart server
+                    else:
+                        stop trigger
+        else if arg-1 is "cancel":
+            if {StopServer.started} is true:
+                set {StopServer.started} to false
+                set {StopServer.remain} to -1
+                message "{@prefix}You have stopped the server from stopping."
+                send title "&b&lStopServer" with subtitle "&r&7Server-stopping cancelled." to all players for 3 seconds
+            else:
+                message "{@prefix}Server-stopping haven't started yet."
+        else if arg-1 is "set":
+            if arg-2 is set:
+                message "{@prefix}You have set the countdown before stopping the server to &f%arg-2%&7 seconds."
+                set {StopServer.countdown} to arg-2
+        else:
+            message "{@prefix}"
+            message "&7- &7Main Command: &f/stopserver &7aliases: &f/sstop"
+            message "&7- &f/stop &7| &f/restart &7| &f/sstop &7Stops the server with countdowns"
+            message "&7- &f/sstop &7Stops the server immediately if countdown has started"
+            message "&7- &f/sstop cancel &7Cancel the server-stopping countdown"
+            message "&7- &f/sstop set <seconds> &7Set the countdown before stopping the server"
+
+on command "/stop":
+    if event-commandsender is console:
+        cancel event
+        execute console command "/sstop"
+    else if event-commandsender is player:
+        cancel event
+        make event-player say "/sstop"
+
+on command "/restart":
+    if event-commandsender is console:
+        cancel event
+        execute console command "/sstop"
+    else if event-commandsender is player:
+        cancel event
+        make event-player say "/sstop"
