@@ -6,7 +6,8 @@
 Player complaining about losing items when server suddenly stops?<br>
 This skript can make a countdown and let all players informed before you stop or restart the server.<br>
 <br>
-<b>Skript Version:</b> Skript 2.5.2<br>
+<b>Skript Version:</b> 1.0.0<br>
+<b>Required Skript Version:</b> Skript 2.5.2<br>
 <b>File Type:</b> SK<br>
 
 ## Commands
@@ -19,7 +20,7 @@ Main Command: <b>/stopserver</b> aliases: <b>/sstop</b><br>
 
 ## Permissions
 
-- <b>stopserver.stop</b> Permission to use the main command
+- <b>stopserver.stop</b> Permission to use the main command<br>
 
 ## Pictures
 
