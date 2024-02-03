@@ -1,7 +1,7 @@
 # StopServer
 ## Introduction
 
-<img align="center" src="https://cdn.jsdelivr.net/gh/katorlymc/StopServer/screenshots/pic1.PNG">
+<img align="center" src="https://cdn.jsdelivr.net/gh/katorly/StopServer-skript/screenshots/pic1.PNG">
 
 Player complaining about losing items when server suddenly stops?<br>
 This skript can make a countdown and let all players informed before you stop or restart the server.<br>
@@ -24,12 +24,12 @@ Main Command: <b>/stopserver</b> aliases: <b>/sstop</b><br>
 
 ## Pictures
 
-<img align="center" src="https://cdn.jsdelivr.net/gh/katorlymc/StopServer/screenshots/pic2.PNG"><br>
+<img align="center" src="https://cdn.jsdelivr.net/gh/katorly/StopServer-skript/screenshots/pic2.PNG"><br>
 
 ## Download
 
-<a href="https://github.com/katorlymc/StopServer/raw/master/StopServer.sk" target="_blank"><img align="center" width="33%" src="https://cdn.jsdelivr.net/gh/katorly/katorly/SocialLinks/Download1.png"></a><a href="https://github.com.cnpmjs.org/katorlymc/StopServer/raw/master/StopServer.sk" target="_blank"><img align="center" width="33%" src="https://cdn.jsdelivr.net/gh/katorly/katorly/SocialLinks/Download2.png"></a><a href="https://hub.fastgit.org/katorlymc/StopServer/raw/master/StopServer.sk" target="_blank"><img align="center" width="33%" src="https://cdn.jsdelivr.net/gh/katorly/katorly/SocialLinks/Download3.png"></a><br>
-Still unable to download? Try downloading the entire repository through the mirror sites.
+<a href="https://github.com/katorly/StopServer-skript/raw/master/StopServer.sk" target="_blank"><img align="center" width="20%" src="https://cdn.jsdelivr.net/gh/katorly/katorly/buttons/github-download.png"></a><a href="https://cdn.jsdelivr.net/gh/katorly/StopServer-skript/StopServer.sk" target="_blank"><img align="center" width="20%" src="https://cdn.jsdelivr.net/gh/katorly/katorly/buttons/jsdelivr-download.png"></a><a href="https://github.katorly.workers.dev/katorly/StopServer-skript/raw/master/StopServer.sk" target="_blank"><img align="center" width="20%" src="https://cdn.jsdelivr.net/gh/katorly/katorly/buttons/cloudflare-download.png"></a><br>
+Unable to download? Try downloading the entire repository.  
 
 ## Notice
 
